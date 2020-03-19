@@ -1,2 +1,2 @@
 # Plutonemur-Rest-Android-Github
-Plutonem.com REST Client for Android apps..
+Plutonem.com REST Client for NA Android apps..
