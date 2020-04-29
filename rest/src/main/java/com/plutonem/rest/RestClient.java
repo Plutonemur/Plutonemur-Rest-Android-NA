@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class RestClient {
     public static final String TAG = "PlutonemREST";
-    public static enum REST_CLIENT_VERSIONS {V0, V1, V1_1, V1_2, V1_3}
+    public static enum REST_CLIENT_VERSIONS {V0, V1, V1_1, V1_2, V1_3, V1_4}
     public static final String PARAMS_ENCODING = "UTF-8";
 
     protected static final String REST_API_ENDPOINT_URL_V0 = "http://3.15.14.1/";
@@ -20,6 +20,7 @@ public class RestClient {
     protected static final String REST_API_ENDPOINT_URL_V1_1 = "http://3.15.14.1/rest/v1.1/";
     protected static final String REST_API_ENDPOINT_URL_V1_2 = "http://3.15.14.1/rest/v1.2/";
     protected static final String REST_API_ENDPOINT_URL_V1_3 = "http://3.15.14.1/rest/v1.3/";
+    protected static final String REST_API_ENDPOINT_URL_V1_4 = "http://3.15.14.1/rest/v1.4/";
 
     private RequestQueue mQueue;
     private String mAccessToken;
@@ -33,8 +34,9 @@ public class RestClient {
 
     public RestClient(RequestQueue queue, REST_CLIENT_VERSIONS version) {
         mQueue = queue;
-
-        if (version == REST_CLIENT_VERSIONS.V1_3) {
+        if (version == REST_CLIENT_VERSIONS.V1_4) {
+            mRestApiEndpointURL = REST_API_ENDPOINT_URL_V1_4;
+        } else if (version == REST_CLIENT_VERSIONS.V1_3) {
             mRestApiEndpointURL = REST_API_ENDPOINT_URL_V1_3;
         } else if (version == REST_CLIENT_VERSIONS.V1_2) {
             mRestApiEndpointURL = REST_API_ENDPOINT_URL_V1_2;
